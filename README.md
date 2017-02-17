@@ -4,4 +4,4 @@ This repository contains a Docker container for the [OWASP SSL advanced forensic
 
 ## Usage
 
-    docker run punkstar/osaft +check www.nicksays.co.uk
+    docker run punkstar/o-saft +check www.nicksays.co.uk
