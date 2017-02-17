@@ -13,13 +13,13 @@ RUN cpan CPAN && \
   cpan IO::Socket::SSL
 
 ENV DOWNLOAD_URL https://github.com/OWASP/O-Saft/archive/16.12.16.tar.gz
-ENV DOWNLOAD_CHECKSUM 04fc94790421632f6b877a73a63b3cb03c7b0af45760b5e4d555687dea80d655
+ENV DOWNLOAD_CHECKSUM 9aef91f11882830c612ec0c432abc512be07cfb6b4b51516ce9787f8cf27f795
 ENV DOWNLOAD_LOCATION /opt/osaft.tar.gz
 ENV CHECKSUM_LOCATION /osaft-checksum
 
 RUN wget $DOWNLOAD_URL -O $DOWNLOAD_LOCATION && \
   echo "$DOWNLOAD_CHECKSUM $DOWNLOAD_LOCATION" > $CHECKSUM_LOCATION && \
-  RUN sha256sum --check $CHECKSUM_LOCATION || true && \
+  sha256sum --check $CHECKSUM_LOCATION && \
   cd /opt && tar -xzf $DOWNLOAD_LOCATION && \
   rm -f $DOWNLOAD_LOCATION && \
   mv /opt/* /opt/osaft
