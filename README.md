@@ -1,3 +1,5 @@
+⚠️ **Note: This repository and Docker image are now deprecated in favour of the official image at [owasp/o-saft](https://github.com/OWASP/O-Saft).**
+
 # O-Saft Docker Container
 
 This repository contains a Docker container for the [OWASP SSL advanced forensic tool](https://github.com/OWASP/O-Saft).
